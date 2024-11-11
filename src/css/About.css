@@ -1,0 +1,14 @@
+/* About.css */
+.about-container {
+  height: 100vh; /* 100% of the viewport height */
+  background-color: #f8f9fa; Optional: Set a background color
+}
+
+.about-container h1 {
+  margin-bottom: 20px; /* Optional: Adjust spacing as needed */
+}
+
+.about-container p {
+  max-width: 600px; /* Optional: Set a max-width for the paragraph */
+  margin: 0 auto; /* Center the paragraph */
+}
