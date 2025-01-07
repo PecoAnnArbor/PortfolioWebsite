@@ -4,3 +4,12 @@ This is my personal portfolio website.
 
 Inspired by a Ink Shadow-esq style. Fading between orange -> black -> white. Aiming for a flowy design.
 
+About Section
+Project Section
+Links (Sidebar) Section : LinkedIn, Github, Instagram
+
+Coming Soon!
+---
+Contact Me (Footer)
+Three.js Features
+Minigame Section (Badminton)
