@@ -8,6 +8,13 @@ About Section
 Project Section
 Links (Sidebar) Section : LinkedIn, Github, Instagram
 
+Tech Stack
+----
+HTML + CSS - Bootstrap
+Javascript - React
+
+Contact Me: Web3Forms / Mailchimp API
+
 Coming Soon!
 ---
 Contact Me (Footer)
