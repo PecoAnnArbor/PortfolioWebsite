@@ -19,6 +19,10 @@
   margin-bottom: 10px;
 }
 
+.project-link {
+  text-decoration: none;;
+}
+
 .project-description {
   font-size: 1em;
   margin-bottom: 15px;

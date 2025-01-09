@@ -39,7 +39,7 @@ function Home() {
             Developer passionate about <b>interactive</b> and <b>dynamic</b> applications with expertise in Python, C++, and JavaScript.
             Currently working with <b>Qt</b> and <b>React</b> to create user-friendly, visually engaging solutions.
             <br /><br />
-            Welcome to my website!
+            Welcome to my website
           </p>
         </div>
         <span className={`description scroll-down-button ${isScrolled ? "fade-out" : ""}`}>

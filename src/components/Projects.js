@@ -4,6 +4,7 @@ import ProjectCard from "./ProjectCard";
 function Projects() {
   const projects = [
     {
+      link: "https://github.com/PecoAnnArbor/Healthy-MHACKS-2024-Catepillar-Inc.-Winner-",
       title: 
       <>
         Healthy <br /> (MHacks 2024)
@@ -30,6 +31,7 @@ function Projects() {
         {projects.map((project, index) => (
           <ProjectCard
             key={index}
+            link={project.link}
             title={project.title}
             description={project.description}
             techStack={project.techStack}
