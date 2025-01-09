@@ -13,3 +13,32 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
 .App {
   background: inherit; /* Inherits the background from the parent */
 }
+
+/* Disable scrolling on body to prevent unexpected behavior */
+html, body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+/* Scroll container that holds all sections */
+.content {
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  height: 100vh;
+  position: relative; /* Ensure it's a stacking context but doesn't affect fixed elements */
+}
+/* Each section inside .content */
+.content > * {
+  scroll-snap-align: start; /* Ensures each section snaps to the start of the viewport */
+  height: 100vh;            /* Each section occupies full viewport height */
+  width: 100%;              /* Full width for consistent layout */
+}
+
+/* SocialSlider remains outside of .content */
+.social-slider {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 100;
+}

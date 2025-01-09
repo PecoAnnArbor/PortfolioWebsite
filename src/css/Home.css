@@ -1,36 +1,56 @@
-/* Home.css */
 .home-container {
+  position: relative;
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 20px;
+  text-align: center;
+}
+
+.overlay-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
+  opacity: 1;
+  animation: brush-stroke 5s forwards;
+}
+
+.name,
+.description {
+  position: relative;
+  z-index: 3;
+  opacity: 0; /* Start hidden */
+  animation: fade-in 2s forwards; /* Same duration as brush stroke */
+  animation-delay: 1s; /* Adjust to sync with brush stroke */
 }
 
 .name {
   font-size: 72px;
   font-weight: bold;
-  background: linear-gradient(90deg, rgba(255, 69, 0, 0.5) 20%, lightgrey 40%, rgba(255, 69, 0, 0.5) 100%);
+  background: linear-gradient(60deg, lightgrey 0%, rgba(205, 71, 22, 0.813) 50%, lightgrey 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  animation: flowing-ink 10s infinite linear;
+  animation: flowing-ink 10s infinite linear, fade-in 5s forwards;
+  animation-delay: 1s;
   background-size: 200% 100%;
-  margin-bottom: 20px; /* Add space below the name */
-}
-
-@keyframes flowing-ink {
-  0% { background-position: 200% 0; }
-  100% { background-position: -200% 0; }
+  margin-bottom: 20px;
 }
 
 .description {
   color: lightgrey;
-  max-width: 550px; /* Narrow the text for easier reading */
-  text-align: center; /* Center-align the text */
-  line-height: 1.6; /* Improve readability */
-  margin: 0 auto 20px; /* Center and add space below */
+  max-width: 550px;
+  text-align: center;
+  line-height: 1.6;
+  margin: 0 auto 20px;
+  animation: fade-in 5s forwards;
+  animation-delay: 1s;
 }
 
 .scroll-down-button {
@@ -38,9 +58,33 @@
   bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
-  transition: opacity 0.5s ease-in-out;
   opacity: 1;
+  transition: opacity 0.5s ease-in-out;
   animation: bounce 2s infinite;
+}
+
+.scroll-down-button.fade-out {
+  opacity: 0;
+}
+
+@keyframes brush-stroke {
+  0% {
+    clip-path: inset(0 100% 0 0);
+    opacity: 1;
+  }
+  50% {
+    clip-path: inset(0 0 0 0);
+    opacity: 1;
+  }
+  100% {
+    clip-path: inset(0 0 0 0);
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }
 
 @keyframes bounce {
@@ -49,6 +93,7 @@
   60% { transform: translateY(-5px); }
 }
 
-.scroll-down-button.fade-out {
-  opacity: 0;
+@keyframes flowing-ink {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
 }

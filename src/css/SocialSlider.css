@@ -1,65 +1,73 @@
+/* Social Slider Main Container */
 .social-slider {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 1000;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+    position: fixed; /* Fixed to viewport */
+    bottom: 20px;    /* Distance from the bottom */
+    right: 20px;     /* Distance from the right */
+    z-index: 1000;   /* Ensures it overlays other elements */
+    display: flex;   /* Flex container */
+    flex-direction: column; /* Stack buttons vertically */
+    align-items: flex-end;  /* Align to the right */
+    gap: 10px;       /* Space between buttons */
     transition: width 0.3s ease, height 0.3s ease;
-    gap: 10px; /* Space between the buttons */
-}
-
-.social-slider.expanded {
-    width: auto; /* Allow the container to expand naturally */
+    will-change: transform, opacity; /* Optimize animations */
+  }
+  
+  /* Expanded State for Social Slider */
+  .social-slider.expanded {
+    width: auto; /* Allow natural expansion */
     height: auto;
-}
-
-.main-button {
+  }
+  
+  /* Main Button Styling */
+  .main-button {
     background-color: rgb(54, 69, 79);
     color: white;
     border: none;
-    border-radius: 50%;
+    border-radius: 50%; /* Circular shape */
     width: 50px;
     height: 50px;
     font-size: 24px;
     cursor: default;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.3s ease;
-    /* Ensure the button stays circular */
-    display: flex;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    display: flex; /* Center content */
     justify-content: center;
     align-items: center;
-}
-
-.social-button {
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Social Buttons (Hidden by Default) */
+  .social-button {
     background-color: rgb(54, 69, 79);
     color: white;
     border: none;
-    border-radius: 50%;
+    border-radius: 50%; /* Circular shape */
     width: 50px;
     height: 50px;
     font-size: 18px;
     cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    opacity: 0;
-    transform: translateX(20px);
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    /* Hide the button by default */
-    display: none;
-}
-
-.social-slider.expanded .social-button {
-    opacity: 1;
-    transform: translateX(0);
-    display: block; /* Show the buttons when expanded */
-}
-
-.social-button:hover {
-    background-color: rgb(199, 93, 28);
-}
-
-.social-slider a {
-    text-decoration: none; /* Removes underline */
-    color: inherit; /* Inherits the color from the parent element */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    opacity: 0; /* Hidden */
+    visibility: hidden; /* Exclude from interactions */
+    transform: translateX(20px); /* Slight offset */
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
   }
+  
+  /* Expanded State for Social Buttons */
+  .social-slider.expanded .social-button {
+    opacity: 1; /* Fully visible */
+    visibility: visible; /* Interactable */
+    transform: translateX(0); /* Reset offset */
+    display: block; /* Ensure buttons are visible */
+  }
+  
+  /* Social Button Hover State */
+  .social-button:hover {
+    background-color: rgb(199, 93, 28); /* Highlight on hover */
+  }
+  
+  /* Social Links */
+  .social-slider a {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit text color */
+  }
+  

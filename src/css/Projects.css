@@ -1,103 +1,22 @@
-/* Projects.css */
-
-.Project-header {
-  min-height: 100vh;
+.projects-section {
+  padding: 50px 0;
+  text-align: center;
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  color: lightgrey;
-  text-align: center;
-
-  position: -webkit-sticky; /* For Safari */
-  position: sticky;
-  top: 0; /* Sticks the header at the top */
-  z-index: 10; /* Ensure it's above other elements */
-  padding: 20px;
+  align-items: center;
 }
 
-.wave {
-  display: inline-block;
-  font-size: 2rem; /* Adjust the size as needed */
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.6s ease-out; /* Ensures smooth transitions */
+.projects-title {
+  font-size: 2.5em;
+  color: #d3d3d3;
+  margin-bottom: 20px;
 }
 
-.in-view .wave {
-  animation: wave 0.6s ease-out forwards;
-}
-
-@keyframes wave {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.Project-header a {
-  color: inherit; /* Inherits the color from the parent element */
-}
-/* 
-.Project-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+.projects-container {
+  display: flex;
+  flex-wrap: wrap;
   gap: 20px;
-  padding: 0 20px;
-  margin: 20px 0;
-
-  display:flow-root;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  color: lightgrey;
-  text-align: center;
 }
-
-.Project-card {
-  background-color: #2a2a2a;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  overflow: hidden;
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.Project-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-}
-
-.Project-card img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-}
-
-.Project-card h3 {
-  font-size: 1.5rem;
-  color: #fff;
-  margin: 1rem 0 0.5rem;
-}
-
-.Project-card p {
-  font-size: 1rem;
-  color: lightgrey;
-  margin: 0.5rem 1rem 1.5rem;
-}
-
-@media (max-width: 768px) {
-  .Project-cards {
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  }
-}
-
-@media (max-width: 480px) {
-  .Project-cards {
-    grid-template-columns: 1fr;
-  }
-} */

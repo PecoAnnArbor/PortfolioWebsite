@@ -1,15 +1,17 @@
 import React, { useState, useEffect } from "react";
 import "../css/Home.css";
+import brushStroke from "../brushStroke.png";
 
 function Home() {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      const windowHeight = window.innerHeight;
+    const contentElement = document.querySelector(".content");
 
-      // Adjust the condition based on when you want the button to fade out
+    const handleScroll = () => {
+      const scrollPosition = contentElement.scrollTop;
+      const windowHeight = contentElement.offsetHeight;
+
       if (scrollPosition > windowHeight * 0.05) {
         setIsScrolled(true);
       } else {
@@ -17,32 +19,33 @@ function Home() {
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
+    contentElement.addEventListener("scroll", handleScroll);
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      contentElement.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
   return (
     <>
-      <div className="home-container text-center d-flex align-items-center justify-content-center">
+      <div className="home-container">
+        {/* SVG overlay */}
+        <img src={brushStroke} alt="Brush Stroke Overlay" className="overlay-svg" />
+        
         <div>
-          <h1 className="name" data-aos="fade-up">
-            Ian Zhang
-          </h1>
-          <p className="description" data-aos="fade-up" data-aos-delay="200">
+          <h1 className="name">Ian Zhang</h1>
+          {/* data-aos="fade-up" to fade up*/}
+          <p className="description" data-aos-delay="200">
             Developer passionate about <b>interactive</b> and <b>dynamic</b> applications with expertise in Python, C++, and JavaScript.
             Currently working with <b>Qt</b> and <b>React</b> to create user-friendly, visually engaging solutions.
-            <br></br>
-            <br></br>
+            <br /><br />
             Welcome to my website!
           </p>
         </div>
+        <span className={`description scroll-down-button ${isScrolled ? "fade-out" : ""}`}>
+        ↓
+        </span>
       </div>
-      <span className={`description scroll-down-button ${isScrolled ? "fade-out" : ""}`}>
-      ↓
-      </span>
     </>
   );
 }

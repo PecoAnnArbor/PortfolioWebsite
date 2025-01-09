@@ -1,7 +1,40 @@
-.description {
-    color: lightgrey;
-    margin: 0.5rem 1rem;
-    font-size: 1rem;
-    line-height: 1.5;
-  }
-  
+.project-card {
+  background: linear-gradient(145deg, #1c1c1c, #292929); /* Soft gradient */
+  color: #e0e0e0;
+  padding: 20px;
+  width: 250px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+}
+
+.project-title {
+  font-size: 1.5em;
+  color: #f85419;
+  margin-bottom: 10px;
+}
+
+.project-description {
+  font-size: 1em;
+  margin-bottom: 15px;
+}
+
+.project-tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+}
+
+.tech-tag {
+  background-color: rgba(248, 84, 25, 0.8);
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.85em;
+}

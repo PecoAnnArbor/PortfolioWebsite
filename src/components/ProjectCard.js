@@ -1,16 +1,20 @@
-import React from "react"
-import "../css/ProjectCard.css"; // Updated import path
+import React from "react";
+import "../css/ProjectCard.css";
 
-
-function ProjectCard(props) {
-    return(
-        <div className="description">
-            <h4>{props.name}</h4>
-            {props.image}
-            <br></br>
-            {props.description}
-        </div>
-    )
+function ProjectCard({ title, description, techStack }) {
+  return (
+    <div className="project-card">
+      <h3 className="project-title">{title}</h3>
+      <p className="project-description">{description}</p>
+      <div className="project-tech-stack">
+        {techStack.map((tech, index) => (
+          <span key={index} className="tech-tag">
+            {tech}
+          </span>
+        ))}
+      </div>
+    </div>
+  );
 }
 
 export default ProjectCard;
